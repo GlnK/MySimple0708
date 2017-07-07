@@ -1,13 +1,23 @@
 package com.glen.mysimple.util;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.glen.mysimple.module.recommand.RecommandBodyValue;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 /**
  * @author: vision
@@ -15,7 +25,57 @@ import java.util.ArrayList;
  * @date: 16/8/16
  */
 public class Util {
+    public static Bitmap createQRCode(int width, int height, String source) {
+        try {
+            if (TextUtils.isEmpty(source)) {
+                return null;
+            }
+            Hashtable<EncodeHintType, String> hints = new Hashtable<>();
+            hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
+            BitMatrix bitMatrix = new QRCodeWriter().encode(source, BarcodeFormat.QR_CODE, width, height, hints);
+            int[] pixels = new int[width * height];
+            for (int y = 0; y < height; y++) {
+                for (int x = 0; x < width; x++) {
+                    if (bitMatrix.get(x, y)) {
+                        pixels[y * width + x] = 0xff000000;
+                    } else {
+                        pixels[y * width + x] = 0xffffffff;
+                    }
+                }
+            }
+            // sheng chen de er wei ma
+            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
+            return bitmap;
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
+    public static int getVersionCode(Context context) {
+        int versionCode = 1;
+        try {
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
+            versionCode = pi.versionCode;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return versionCode;
+    }
+
+    public static String getVersionName(Context context) {
+        String versionName = "1.0.0";
+        try {
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
+            versionName = pi.versionName;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return versionName;
+    }
 
     //为ViewPager结构化数据
     public static ArrayList<RecommandBodyValue> handleData(RecommandBodyValue value) {

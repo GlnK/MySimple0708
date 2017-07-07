@@ -1,6 +1,7 @@
 package com.glen.mysimple.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.glen.mysdk.activity.AdBrowserActivity;
 import com.glen.mysdk.adutil.ImageLoaderUtil;
 import com.glen.mysdk.adutil.Utils;
+import com.glen.mysdk.core.AdContextInterface;
+import com.glen.mysdk.core.video.VideoAdContext;
 import com.glen.mysimple.R;
 import com.glen.mysimple.module.recommand.RecommandBodyValue;
 import com.glen.mysimple.util.Util;
@@ -21,6 +25,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import com.google.gson.Gson;
 
 /**
  * @author: qndroid
@@ -39,6 +45,7 @@ public class CourseAdapter extends BaseAdapter {
     private ViewHolder mViewHolder;
     private ImageLoaderUtil mImageLoader;
     private ArrayList<RecommandBodyValue> mData;
+    private VideoAdContext mAdsdkContext;
 
     // private ImageLoaderManager mImageLoader;
 
@@ -118,6 +125,18 @@ public class CourseAdapter extends BaseAdapter {
                     //一开始就让ViewPager处于一个靠中间的项
                     mViewHolder.mViewPager.setCurrentItem(recommandList.size() * 10);
                     break;
+                case VIDOE_TYPE:
+                    mViewHolder = new ViewHolder();
+                    convertView = mInflate.inflate(R.layout.item_video_layout, parent, false);
+                    mViewHolder.mVieoContentLayout = (RelativeLayout) convertView.findViewById(R.id.video_ad_layout);
+                    mViewHolder.mLogoView = (CircleImageView) convertView.findViewById(R.id.item_logo_view);
+                    mViewHolder.mTitleView = (TextView) convertView.findViewById(R.id.item_title_view);
+                    mViewHolder.mInfoView = (TextView) convertView.findViewById(R.id.item_info_view);
+                    mViewHolder.mFooterView = (TextView) convertView.findViewById(R.id.item_footer_view);
+                    mViewHolder.mShareView = (ImageView) convertView.findViewById(R.id.item_share_view);
+                    mAdsdkContext = new VideoAdContext(mViewHolder.mVieoContentLayout, new Gson().toJson(value), null);
+
+                    break;
             }
             convertView.setTag(mViewHolder);
         } else {
@@ -158,6 +177,13 @@ public class CourseAdapter extends BaseAdapter {
         return convertView;
     }
 
+    //第二部：自动播放方法
+    public void updateAdInScrollView() {
+        if (mAdsdkContext != null) {
+            mAdsdkContext.updateAdInScrollView();
+        }
+    }
+
     /**
      * 动态创建ImageVIew
      *
@@ -192,5 +218,8 @@ public class CourseAdapter extends BaseAdapter {
 
         private ImageView mProductView;
         private ViewPager mViewPager;
+        private RelativeLayout mVieoContentLayout;
+
+
     }
 }

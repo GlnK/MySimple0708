@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent">
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent">
 
         <SurfaceView
             android:id="@+id/preview_view"
@@ -13,24 +13,24 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center" />
 
-        <com.youdu.zxing.view.ViewfinderView
+        <com.glen.mysimple.zxing.view.ViewfinderView
             android:id="@+id/viewfinder_view"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
 
         <include
             android:id="@+id/include1"
+            layout="@layout/item_qrcode_title"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            layout="@layout/item_qrcode_title" />
+            android:layout_alignParentTop="true" />
 
         <include
             android:id="@+id/include2"
+            layout="@layout/item_qrcode_footer"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            layout="@layout/item_qrcode_footer" />
+            android:layout_alignParentBottom="true" />
     </RelativeLayout>
 
 </FrameLayout>

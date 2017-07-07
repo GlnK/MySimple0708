@@ -1,7 +1,5 @@
 package com.glen.mysdk.module;
 
-
-
 import com.glen.mysdk.module.monitor.Monitor;
 import com.glen.mysdk.module.monitor.emevent.EMEvent;
 

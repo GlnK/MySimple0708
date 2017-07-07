@@ -43,6 +43,8 @@
     </RelativeLayout>
 
     <!--加载数据是的loadingView-->
+
+
     <ImageView
         android:id="@+id/loading_view"
         android:layout_width="match_parent"

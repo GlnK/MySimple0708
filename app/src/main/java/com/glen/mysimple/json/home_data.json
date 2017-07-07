@@ -72,63 +72,63 @@
           "http://i0.hdslb.com/bfs/archive/db522f316a9f555d8fa9bfe856c5a606612747d6.jpg"
         ]
       },
-//      {
-//        "type": 0,
-//        "logo": "http://b.hiphotos.baidu.com/zhidao/pic/item/d1a20cf431adcbefef0f982fabaf2edda3cc9fe4.jpg",
-//        "title": "今日必学",
-//        "info": "1",
-//        "text": "想成为全栈工程师吗，MogoDB你的不二法宝.",
-//        "site": "http://www.imooc.com/learn/595",
-//        "from": "来自南京",
-//        "zan": "10",
-//        "resource": "http://fairee.vicp.net:83/2016rm/0116/baishi160116.mp4",
-//        "adid": "00000001112",
-//        "clickUrl": "http://www.imooc.com/",
-//        "clickMonitor": [
-//          {
-//            "ver": "0",
-//            "url": "http://imooc.com/click??click=1"
-//          },
-//          {
-//            "ver": "0",
-//            "url": "http://imooc.com/click?click=2"
-//          }
-//        ],
-//        "startMonitor": [
-//          {
-//            "ver": "0",
-//            "url": "http://imooc.com/show?impression=1"
-//          },
-//          {
-//            "ver": "0",
-//            "url": "http: //imooc.com/show?impression=2"
-//          }
-//        ],
-//        "middleMonitor": [
-//          {
-//            "ver": "0",
-//            "url": "http://imooc.com/show?SU=1",
-//            "time": 5
-//          },
-//          {
-//            "ver": "0",
-//            "url": "http: //imooc.com/show?impression=2",
-//            "time": 5
-//          }
-//        ],
-//        "endMonitor": [
-//          {
-//            "ver": "0",
-//            "url": "http://imooc.com/show?end=1",
-//            "time": 5
-//          },
-//          {
-//            "ver": "0",
-//            "url": "http: //imooc.com/show?end=2",
-//            "time": 5
-//          }
-//        ]
-//      },
+      {
+        "type": 0,
+        "logo": "http://b.hiphotos.baidu.com/zhidao/pic/item/d1a20cf431adcbefef0f982fabaf2edda3cc9fe4.jpg",
+        "title": "今日必学",
+        "info": "1",
+        "text": "想成为全栈工程师吗，MogoDB你的不二法宝.",
+        "site": "http://www.imooc.com/learn/595",
+        "from": "来自南京",
+        "zan": "10",
+        "resource": "http://fairee.vicp.net:83/2016rm/0116/baishi160116.mp4",
+        "adid": "00000001112",
+        "clickUrl": "http://www.imooc.com/",
+        "clickMonitor": [
+          {
+            "ver": "0",
+            "url": "http://imooc.com/click??click=1"
+          },
+          {
+            "ver": "0",
+            "url": "http://imooc.com/click?click=2"
+          }
+        ],
+        "startMonitor": [
+          {
+            "ver": "0",
+            "url": "http://imooc.com/show?impression=1"
+          },
+          {
+            "ver": "0",
+            "url": "http: //imooc.com/show?impression=2"
+          }
+        ],
+        "middleMonitor": [
+          {
+            "ver": "0",
+            "url": "http://imooc.com/show?SU=1",
+            "time": 5
+          },
+          {
+            "ver": "0",
+            "url": "http: //imooc.com/show?impression=2",
+            "time": 5
+          }
+        ],
+        "endMonitor": [
+          {
+            "ver": "0",
+            "url": "http://imooc.com/show?end=1",
+            "time": 5
+          },
+          {
+            "ver": "0",
+            "url": "http: //imooc.com/show?end=2",
+            "time": 5
+          }
+        ]
+      },
       {
         "type": 1,
         "logo": "http://img3.duitang.com/uploads/item/201407/01/20140701222607_AnKfj.thumb.224_0.jpeg",

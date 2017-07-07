@@ -9,8 +9,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.glen.mysdk.imageloader.ImageLoaderManager;
-//import com.youdu.activity.CourseDetailActivity;
+import com.glen.mysdk.adutil.ImageLoaderUtil;
+
 
 
 import java.util.ArrayList;
@@ -23,16 +23,15 @@ import uk.co.senab.photoview.PhotoView;
 public class PhotoPagerAdapter extends PagerAdapter {
 
     private Context mContext;
-
     private boolean mIsMatch;
     private ArrayList<String> mData;
-    private ImageLoaderManager mLoader;
+    private ImageLoaderUtil mLoader;
 
     public PhotoPagerAdapter(Context context, ArrayList<String> list, boolean isMatch) {
         mContext = context;
         mData = list;
         mIsMatch = isMatch;
-        mLoader = ImageLoaderManager.getInstance(mContext);
+        mLoader = ImageLoaderUtil.getInstance(mContext);
     }
 
     @Override
@@ -44,8 +43,8 @@ public class PhotoPagerAdapter extends PagerAdapter {
     public View instantiateItem(ViewGroup container, int position) {
         ImageView photoView;
         if (mIsMatch) {
-            photoView = new ImageView(mContext);
-            photoView.setScaleType(ScaleType.FIT_XY);
+         photoView = new ImageView(mContext);
+//            photoView.setScaleType(ScaleType.FIT_XY);
 //            photoView.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {

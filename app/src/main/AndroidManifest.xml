@@ -3,6 +3,10 @@
     package="com.glen.mysimple">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -19,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.PhotoViewActivity"></activity>
+        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.SettingActivity"></activity>
+        <activity android:name=".zxing.app.CaptureActivity"></activity>
+        <activity android:name="com.glen.mysdk.activity.AdBrowserActivity"></activity>
     </application>
-
 </manifest>

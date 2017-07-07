@@ -33,15 +33,10 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_home_layout);
-
-
         initView();
-
         mHomeFragment = new HomeFragment();
         fm = getFragmentManager();
-
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.content_layout, mHomeFragment);
         fragmentTransaction.commit();

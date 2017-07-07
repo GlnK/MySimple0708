@@ -8,7 +8,6 @@ package com.glen.mysdk.okhttp.listener;
  * @修改历史：2015年8月19日创建初始版本
  **********************************************************/
 public interface DisposeDataListener {
-
 	/**
 	 * 请求成功回调事件处理
 	 */
